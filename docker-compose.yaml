@@ -1,0 +1,14 @@
+# Compose file for local development
+version: "3.6"
+
+services:
+  todo-api:
+   image: todo-api
+   container_name: todo-api
+   build:
+    context: ./api/
+    dockerfile: Dockerfile
+   ports:
+    - "8000:8000"
+   volumes:
+    - "./api:/app"
