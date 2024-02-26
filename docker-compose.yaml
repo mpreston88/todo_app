@@ -12,3 +12,20 @@ services:
     - "8000:8000"
    volumes:
     - "./api:/app"
+   environment:
+    - MONGO_HOST=todo-mongodb
+    - MONGO_USERNAME
+    - MONGO_PASSWORD
+  todo-mongodb:
+    image: mongodb/mongodb-community-server:latest
+    container_name: todo-mongodb
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME
+      - MONGO_INITDB_ROOT_PASSWORD
+    ports:
+      - 27017:27017
+    volumes:
+      - todo-mongodb-container:/data/db
+  
+volumes:
+      todo-mongodb-container:
