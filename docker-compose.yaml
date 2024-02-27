@@ -26,6 +26,16 @@ services:
       - 27017:27017
     volumes:
       - todo-mongodb-container:/data/db
+  todo-frontend:
+    image: todo-frontend
+    container_name: todo-frontend
+    build:
+      context: ./todo-frontend/
+      dockerfile: Dockerfile
+    ports:
+     - "3000:3000"
+    volumes:
+     - "./todo-frontend:/todo-frontend"
   
 volumes:
       todo-mongodb-container:
