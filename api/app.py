@@ -1,8 +1,8 @@
+from database import db_client, db_session
 from fastapi import Depends, FastAPI, Response
 from pymongo.client_session import ClientSession
-from todos.database import db_client, db_session
-from todos.models import PyObjectId, Task
-from todos.schemas import TaskSchema
+from tasks.models import PyObjectId, Task
+from tasks.schemas import TaskSchema
 
 # configure fastapi
 app = FastAPI()
