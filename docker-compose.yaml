@@ -3,16 +3,16 @@ version: "3.6"
 
 services:
   todo-api:
-   image: todo-api
-   container_name: todo-api
-   build:
-    context: ./api/
-    dockerfile: Dockerfile
-   ports:
+    image: todo-api
+    container_name: todo-api
+    build:
+      context: ./api/
+      dockerfile: Dockerfile
+    ports:
     - "8000:8000"
-   volumes:
+    volumes:
     - "./api:/app"
-   environment:
+    environment:
     - MONGO_HOST=todo-mongodb
     - MONGO_USERNAME
     - MONGO_PASSWORD
@@ -32,7 +32,6 @@ services:
     build:
       context: ./todo-frontend/
       dockerfile: Dockerfile
-    ports:
      - "3000:3000"
     volumes:
      - "./todo-frontend:/todo-frontend"
