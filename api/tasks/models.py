@@ -42,4 +42,4 @@ class Task(TaskSchema):
     Model of a Task from Mongodb
     """
 
-    id: PyObjectId = Field(ObjectId, description="The id of the task todo", alias="_id")
+    id: PyObjectId = Field(ObjectId, description="The id of the task todo", alias="_id", serialization_alias="id")
