@@ -16,7 +16,7 @@ const AddTask: React.FC<Props> = ({ createTask }) => {
 
 
   return (
-    <form onSubmit={handleCreateTask}>
+    <form onSubmit={handleCreateTask} className="Form">
       <input type="text"
        placeholder='Task Description...' 
        name='task'
