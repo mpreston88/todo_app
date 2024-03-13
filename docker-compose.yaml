@@ -32,6 +32,7 @@ services:
     build:
       context: ./todo-frontend/
       dockerfile: Dockerfile
+    ports:
      - "3000:3000"
     volumes:
      - "./todo-frontend:/todo-frontend"
